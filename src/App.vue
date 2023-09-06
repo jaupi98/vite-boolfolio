@@ -4,7 +4,7 @@ import AppHeader from './components/AppHeader.vue';
 
 export default{
   components:{
-    AppMain,
+    
     AppHeader
   }
 }
@@ -14,7 +14,8 @@ export default{
 <template>
   <div>
     <AppHeader/>
-    <AppMain/>
+    
+    <router-view></router-view>
   </div>
  
 </template>
