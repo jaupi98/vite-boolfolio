@@ -1,27 +1,26 @@
-//importiamo createRouter e CreateHistory da vue_router
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory } from 'vue-router';
 
-//importiamo le componenti che rappresentano le pagine 
-
+// Importiamo le componenti che rappresentano le pagine 
 import HomePage from "./pages/HomePage.vue";
 import ProjectList from "./pages/ProjectList.vue";
 
-//creiamo il router a tutti gli effeti 
-
+// Creiamo il router a tutti gli effetti 
 const router = createRouter({
     history: createWebHistory(),
-    routers:[
+    routes: [  // NOTA: Cambiato 'routers' in 'routes'
         {
             path:'/',
             name:'home',
-            components:HomePage
+            component: HomePage, 
         },
         {
             path:'/projects',
             name:'projects',
-            components:ProjectList
+            component: ProjectList, 
         }
     ]
-})
+});
+
+export { router }
 
 

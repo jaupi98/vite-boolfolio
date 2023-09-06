@@ -1,17 +1,19 @@
 <script>
 export default {
-         name:"AppHeader"  ,
+         name:"AppHeader" ,
          data(){
             return{
                     menuItems:[
                         {
                             label:'Home',
+                            routeName:'home'
                         },
                         {
                             label:'Chi siamo',
                         },
                         {
-                            label:'Articoli',
+                            label:'progetti',
+                            routeName:'projects'
                         },
                         {
                             label:'Categorie',
