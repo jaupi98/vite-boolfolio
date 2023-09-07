@@ -17,7 +17,6 @@ export default {
 
             store,
             projects:[],
-            loading: true,
             currentPage:1,
             lastPage:null,
         
@@ -29,7 +28,7 @@ export default {
     },
     methods:{
         getProjects(num_page){
-            // this.loading = true;
+            this.store.loading = true;
             // axios.get(`${this.baseUrl}/api/projects`).then((response) =>{
 
             //     if(response.data.success){
@@ -44,7 +43,7 @@ export default {
                 this.projects = response.data.results.data;
                 this.currentPage = response.data.results.current_page;
                 this.lastPage = response.data.results.last_page;
-                this.loading =false;
+                this.store.loading =false;
             })
         },
         
@@ -59,7 +58,7 @@ export default {
             </div>
         </div>
     </div>
-    <AppLoader v-if="loading"/>
+    <AppLoader v-if="store.loading"/>
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-4" v-for="project in projects" :key="project.id" >

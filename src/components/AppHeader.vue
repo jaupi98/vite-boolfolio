@@ -16,7 +16,8 @@ export default {
                             routeName:'projects'
                         },
                         {
-                            label:'Categorie',
+                            label:'tipologie',
+                            routeName:'types'
                         },
                         {
                             label:'Contatti',
