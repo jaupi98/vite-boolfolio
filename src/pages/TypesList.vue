@@ -1,17 +1,17 @@
 <script>
 import {store} from '../store.js';
 import axios from 'axios';
-import AppLoeder from '../components/AppLoader.vue';
+import AppLoader from '../components/AppLoader.vue';
  export default {
       name:"TypesList",
       components:{
-        AppLoeder
+        AppLoader
       },
       data(){
             return{
                 store,
                 types:[],
-                loading
+                
             }
         },
         created() {
@@ -23,6 +23,7 @@ import AppLoeder from '../components/AppLoader.vue';
                     this.store.loading = true;
                    if(response.data.success){
                         this.types = response.data.results
+                        this.store.loading = false
                    }
                 });
             }
@@ -40,9 +41,12 @@ import AppLoeder from '../components/AppLoader.vue';
             <AppLoader v-if="store.loading"/>
             <div class="container" v-else>
                 <div class="row">
-                    <div class="col-12 col-md-2" v-for="type in types" :key="types.id">
+                    <div class="col-12 col-md-2" v-for="type in types" :key="type.id">
                         <div class="card">
-                            
+                                {{type.name}}
+                        </div>
+                        <div class="card-footer"> 
+                            <a href="#" class="btn btn-sm "> tiplogia</a>
                         </div>
                     </div>
                 </div>
